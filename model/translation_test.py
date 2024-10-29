@@ -4,7 +4,7 @@ from openai import OpenAI
 import pygame
 
 # Set your API key
-openai.api_key = "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"
+openai.api_key = "openai-api-key"
 client = OpenAI(
 
     # base_url="http://172.30.64.1:1234/v1",
@@ -14,6 +14,7 @@ client = OpenAI(
 
 # model = "local-model"
 model = "gpt-4"
+
 
 def translate_text(input_text, target_language, source_language=None):
     # Adjust prompt based on whether source_language is provided
