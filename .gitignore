@@ -1,0 +1,4 @@
+#Files that will not be uploaded to the repository
+
+myvenv
+.idea
