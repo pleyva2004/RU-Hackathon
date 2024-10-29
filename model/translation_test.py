@@ -4,7 +4,7 @@ from openai import OpenAI
 import pygame
 
 # Set your API key
-openai.api_key = "openai-api-key"
+openai.api_key = ""
 client = OpenAI(
 
     # base_url="http://172.30.64.1:1234/v1",
