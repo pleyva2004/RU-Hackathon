@@ -1,17 +1,21 @@
 import sounddevice as sd
 import soundfile as sf
 
-samplerate = 44100  # Hertz
-duration = 5  # seconds
-channels = 1  # mono
-filename = 'output_two.wav'
+# Reduce duration for faster processing
+samplerate = 16000
+duration = 3
+channels = 1
+filename = './audio/output_two.wav'
 
 
-print("start recording")
-mydata = sd.rec(int(samplerate * duration),
-                samplerate=samplerate,
-                channels=channels,
-                blocking=True)
-print("end recording")
-
-sf.write(filename, mydata, samplerate)
+try:
+    print("Starting continuous transcription... Press Ctrl+C to stop.")
+    while True:
+        # Record audio (this blocks for 'duration' seconds)
+        mydata = sd.rec(int(samplerate * duration),
+                    samplerate=samplerate,
+                    channels=channels,
+                    blocking=True)
+        
+except KeyboardInterrupt:
+    print("\nTranscription stopped by user")

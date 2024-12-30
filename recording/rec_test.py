@@ -34,10 +34,14 @@ def record_audio(file_path, chunk_length, chunk_size, format, channels, rate):
 
 
 def main():
-    chunk_length = 5  # seconds to record
+    chunk_length = 2  # seconds to record
     chunk_size = 1024  # number of frames per buffer
     format = pyaudio.paInt16  # audio format
     channels = 1  # mono
-    rate = 48000  # Hertz
+    rate = 16000  # Hertz
 
     record_audio("./audio/output.wav", chunk_length, chunk_size, format, channels, rate)
+
+
+if __name__ == "__main__":
+    main()
