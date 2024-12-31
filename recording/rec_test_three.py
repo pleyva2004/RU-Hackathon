@@ -23,7 +23,6 @@ def get_silence_threshold(duration=1, multiplier=1.2):
 # Set the silence threshold
 SILENCE_THRESHOLD = 0.0005859375232830644
 
-
 def record_audio(i):
     if i == 6:
         i = 0

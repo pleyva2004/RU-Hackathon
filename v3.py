@@ -404,5 +404,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# Lower the time between silence detection to 1 second
