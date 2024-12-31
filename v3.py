@@ -310,7 +310,7 @@ def record_audio(i):
             # Store the current time when silence is first detected
             if not hasattr(callback, 'silence_start'):
                 callback.silence_start = t.time()
-            elif t.time() - callback.silence_start >= 1.5:
+            elif t.time() - callback.silence_start >= 1.0:
                 #print("About to raise CallbackStop...")
                 q.put(None) 
                 raise sd.CallbackStop()
@@ -340,8 +340,7 @@ def record_audio(i):
                         i += 1
                         record_audio(i)
                 else:
-                    file.write(data)
-                 
+                    file.write(data)             
           
 def main2():
     try: 
@@ -406,4 +405,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-torch.backends.cudnn.benchmark = True  # Enable CUDA optimization
+# Lower the time between silence detection to 1 second
